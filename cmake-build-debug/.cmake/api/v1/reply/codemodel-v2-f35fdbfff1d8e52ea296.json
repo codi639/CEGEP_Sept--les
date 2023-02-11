@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CEGEP_Sept__les",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CEGEP_Sept__les::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CEGEP_Sept__les-Debug-f72714d6cc3a00f5b6fe.json",
+					"name" : "CEGEP_Sept__les",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Jean-Lou Gilbertas/Documents/GitHub/CEGEP_Sept--les/cmake-build-debug",
+		"source" : "C:/Users/Jean-Lou Gilbertas/Documents/GitHub/CEGEP_Sept--les"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
