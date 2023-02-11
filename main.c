@@ -14,6 +14,7 @@ void gotoxy(int colonne, int ligne);
 int menu();
 int genererNombreAleatoire(int min, int max);
 void basePotence();
+void potence(int etatPotence);
 
 void gotoxy(int colonne, int ligne){
     // Initialise les coordonnées.
@@ -57,10 +58,37 @@ void basePotence(){
     gotoxy(22, 18);printf("*********");
 }
 
-void potence(int etatPotence, char listeCapital[]){
-
+void potence(int etatPotence){
+    system("cls");
+    switch (etatPotence) {
+        case 0:
+            basePotence();
+        case 1:
+            basePotence();
+            gotoxy(36, 5);printf("*****");
+            gotoxy(36, 6);printf("*   *");
+            gotoxy(36, 7);printf("*****");
+            gotoxy(36, 8);printf("  *  ");
+            gotoxy(36, 9);printf("*******");
+            gotoxy(36, 10);printf("*     *");
+            gotoxy(36, 11);printf("*     *");
+        case 2:
+            basePotence();
+            gotoxy(36, 5);printf("*****");
+            gotoxy(36, 6);printf("*   *");
+            gotoxy(36, 7);printf("*****");
+            gotoxy(36, 8);printf("  *  ");
+            gotoxy(36, 9);printf("*******");
+            gotoxy(36, 10);printf("*     *");
+            gotoxy(36, 11);printf("*     *");
+            gotoxy(36, 12);printf("*******");
+            gotoxy(36, 13);printf(" *   * ");
+            gotoxy(36, 14);printf(" *   * ");
+            gotoxy(36, 15);printf("Vous avez perdu !");
+            gotoxy(36, 16);printf("Appuyez sur une touche pour continuer...");
+    }
 }
 
 void main(){
-    basePotence();
+    potence(0);
 }
