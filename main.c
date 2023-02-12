@@ -15,6 +15,7 @@ int menu();
 int genererNombreAleatoire(int min, int max);
 void basePotence();
 void potence(int etatPotence);
+void devinerCapital(char pays[], char capitaleADeviner[], char capitale[]);
 
 void gotoxy(int colonne, int ligne){
     // Initialise les coordonnées.
@@ -84,9 +85,11 @@ void potence(int etatPotence){
             gotoxy(36, 12);printf("*******");
             gotoxy(36, 13);printf(" *   * ");
             gotoxy(36, 14);printf(" *   * ");
-            gotoxy(36, 15);printf("Vous avez perdu !");
-            gotoxy(36, 16);printf("Appuyez sur une touche pour continuer...");
     }
+}
+
+void devinerCapital(char pays[], char capitaleADeviner[], char capitale[]){
+
 }
 
 void main(){
