@@ -70,23 +70,23 @@ void potence(int etatPotence){
             gotoxy(36, 5);printf("*****");
             gotoxy(36, 6);printf("*   *");
             gotoxy(36, 7);printf("*****");
-            gotoxy(36, 8);printf("  *  ");
-            gotoxy(36, 9);printf("*******");
-            gotoxy(36, 10);printf("*     *");
-            gotoxy(36, 11);printf("*     *");
+            gotoxy(38, 8);printf("*");
+            gotoxy(35, 9);printf("*******");
+            gotoxy(35, 10);printf("*     *");
+            gotoxy(35, 11);printf("*     *");
             break;
         case 2:
             basePotence();
             gotoxy(36, 5);printf("*****");
             gotoxy(36, 6);printf("*   *");
             gotoxy(36, 7);printf("*****");
-            gotoxy(36, 8);printf("  *  ");
-            gotoxy(36, 9);printf("*******");
-            gotoxy(36, 10);printf("*     *");
-            gotoxy(36, 11);printf("*     *");
-            gotoxy(36, 12);printf("*******");
-            gotoxy(36, 13);printf(" *   * ");
-            gotoxy(36, 14);printf(" *   * ");
+            gotoxy(38, 8);printf("*");
+            gotoxy(35, 9);printf("*******");
+            gotoxy(35, 10);printf("*     *");
+            gotoxy(35, 11);printf("*     *");
+            gotoxy(35, 12);printf("*******");
+            gotoxy(35, 13);printf(" *   * ");
+            gotoxy(35, 14);printf(" *   * ");
             break;
     }
 }
