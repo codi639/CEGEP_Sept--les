@@ -65,7 +65,7 @@ void potence(int etatPotence){
         case 0:
             basePotence();
         case 1:
-            basePotence();
+            //basePotence();
             gotoxy(36, 5);printf("*****");
             gotoxy(36, 6);printf("*   *");
             gotoxy(36, 7);printf("*****");
@@ -93,5 +93,8 @@ void devinerCapital(char pays[], char capitaleADeviner[], char capitale[]){
 }
 
 void main(){
-    potence(0);
+    printf("Hello World!\n");
+    //basePotence();
+    potence(1);
+    printf("Hello World!\n");
 }
