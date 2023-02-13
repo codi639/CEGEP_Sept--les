@@ -96,6 +96,15 @@ void devinerCapital(char pays[], char capitaleADeviner[], char capitale[]){
 }
 
 void main(){
+    char paysPourTableau[50][50], capitalePourTableau[50][50], pays[100], capitaleADeviner[100], capitale[100];
+    int continent, indexPays, indexCapitale, compteur;
+    FILE *f;
+    f = fopen("fichierDePays.txt", "r");
+    if (f == NULL) {
+        printf("Erreur d'ouverture du fichier");
+        exit(1);
+    }
+    continent = menu();
     printf("Hello World!\n");
     //basePotence();
     potence(2);
