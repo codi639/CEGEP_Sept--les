@@ -1,0 +1,3 @@
+C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\CEGEP_Sept__les.dir/objects.a
+C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\ar.exe qc CMakeFiles\CEGEP_Sept__les.dir/objects.a @CMakeFiles\CEGEP_Sept__les.dir\objects1.rsp
+C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\CEGEP_Sept__les.dir/objects.a -Wl,--no-whole-archive -o CEGEP_Sept__les.exe -Wl,--out-implib,libCEGEP_Sept__les.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CEGEP_Sept__les.dir\linklibs.rsp
