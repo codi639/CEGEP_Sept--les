@@ -64,8 +64,9 @@ void potence(int etatPotence){
     switch (etatPotence) {
         case 0:
             basePotence();
+            break;
         case 1:
-            //basePotence();
+            basePotence();
             gotoxy(36, 5);printf("*****");
             gotoxy(36, 6);printf("*   *");
             gotoxy(36, 7);printf("*****");
@@ -73,6 +74,7 @@ void potence(int etatPotence){
             gotoxy(36, 9);printf("*******");
             gotoxy(36, 10);printf("*     *");
             gotoxy(36, 11);printf("*     *");
+            break;
         case 2:
             basePotence();
             gotoxy(36, 5);printf("*****");
@@ -85,6 +87,7 @@ void potence(int etatPotence){
             gotoxy(36, 12);printf("*******");
             gotoxy(36, 13);printf(" *   * ");
             gotoxy(36, 14);printf(" *   * ");
+            break;
     }
 }
 
@@ -95,6 +98,6 @@ void devinerCapital(char pays[], char capitaleADeviner[], char capitale[]){
 void main(){
     printf("Hello World!\n");
     //basePotence();
-    potence(1);
-    printf("Hello World!\n");
+    potence(2);
+    //printf("Hello World!\n");
 }
