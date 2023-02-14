@@ -31,12 +31,12 @@ int menu() {
     do {
         gotoxy(33, 2); printf("JEU DU PENDU\n");
         gotoxy(32, 3); printf("MENU PRINCIPAL\n");
-        gotoxy(14, 8); printf("Africa\n");
-        gotoxy(14, 9); printf("America\n");
-        gotoxy(14, 10); printf("Asia\n");
-        gotoxy(14, 11); printf("Europe\n");
-        gotoxy(14, 12); printf("Oceania\n");
-        gotoxy(14, 13); printf("Quitter\n");
+        gotoxy(14, 8); printf("1. Afrique\n");
+        gotoxy(14, 9); printf("2. Amerique\n");
+        gotoxy(14, 10); printf("3. Asie\n");
+        gotoxy(14, 11); printf("4. Europe\n");
+        gotoxy(14, 12); printf("5. Oceanie\n");
+        gotoxy(14, 13); printf("6. Quitter\n");
         gotoxy(14, 15); printf("Veuillez choisir le continent : ");
         scanf("%d", &continent);
     } while (continent != 1 && continent != 2 && continent != 3 &&
@@ -93,57 +93,74 @@ void potence(int etatPotence){
 }
 
 void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50][100]){
-    int compteur, indice = 0, tableauAleatoire[9], insertionAleatoire, nombreEssai = 0, choixUtilisateur;
+    int compteur;
+    int indice = 0;
+    int tableauAleatoire[9];
+    int insertionAleatoire;
+    int nombreEssai = 0;
+    int choixUtilisateur = 0;
     char listeCapitale[9][100];
-    bool test = true;
+    bool testEgaliteTableau = true;
+    bool capitaleTrouvee = false;
 
-    //potence(0);
     tableauAleatoire[0] = genererNombreAleatoire(0, 49);
-    for (compteur = 1; compteur < 9; compteur++) {
-        while (test == true){
+    for (compteur = 0; compteur < 9; compteur++) {
+        while (testEgaliteTableau == true){
             for (indice = 0; indice < compteur; indice++) {
                 insertionAleatoire = genererNombreAleatoire(0, 49);
-                if (tableauAleatoire[indice] == insertionAleatoire) {
-                    test = true;
-                } else {
-                    test = false;
-                }
+            }
+            if (tableauAleatoire[indice] == insertionAleatoire) {
+                testEgaliteTableau = true;
+            } else {
+                testEgaliteTableau = false;
             }
         }
         strcpy(listeCapitale[compteur], capitale[tableauAleatoire[indice]]);
     }
-
     insertionAleatoire = genererNombreAleatoire(0, 9);
     strcpy(listeCapitale[9], listeCapitale[insertionAleatoire]);
     strcpy(listeCapitale[insertionAleatoire], capitaleADeviner);
-    for (compteur = 0; compteur < 9; compteur++) {
-        gotoxy(80, 16 + compteur); printf("%d. %s\n", compteur + 1, listeCapitale[compteur]);
-    }
+
 
     nombreEssai = 0;
-    while (nombreEssai < 2){
+    while (nombreEssai < 2 && !capitaleTrouvee){
         system("cls");
-        potence(0);
+        potence(nombreEssai);
+        //printf("%s", listeCapitale[choixUtilisateur - 1]);
+        //printf("%s", capitaleADeviner);
+        for (compteur = 0; compteur < 9; compteur++) {
+            gotoxy(80, 16 + compteur); printf("%d", compteur + 1);
+            gotoxy(82, 16 + compteur); printf("%s", listeCapitale[compteur]);
+        }
         gotoxy(20, 21); printf("Quelle est la capitale du pays suivant ?%s : ", pays);
         gotoxy(20, 23); printf("Entrez votre choix : \n");
-        scanf("%d", &choixUtilisateur);
-        if (listeCapitale[choixUtilisateur] == capitaleADeviner) {
+        gotoxy(41, 23); scanf("%d", &choixUtilisateur);
+
+        if (strcmp(listeCapitale[choixUtilisateur], capitaleADeviner)) {
             gotoxy(20, 23); printf("Bravo, vous avez gagnez !\n");
             gotoxy(20, 24); printf("La capitale de ce pays est bien %s\n", capitaleADeviner);
+            capitaleTrouvee = true;
+            gotoxy(20, 25); printf("Appuyez sur une touche pour continuer...\n");
+            scanf("%d", &choixUtilisateur);
+            system("cls");
         } else {
             nombreEssai++;
-            potence(nombreEssai);
         }
         if (nombreEssai == 2) {
+            potence(2);
             gotoxy(20, 23); printf("Vous avez perdu !\n");
             gotoxy(20, 24); printf("La capitale de ce pays est %s\n", capitaleADeviner);
+            gotoxy(20, 25); printf("Appuyez sur une touche pour continuer...\n");
+            scanf("%d", &choixUtilisateur);
+            system("cls");
         }
     }
 }
 
 void main(){
+    system("cls");
     char paysPourTableau[50][100], capitalePourTableau[50][100], pays[100], capitaleADeviner[100], capitales[50][100];
-    int continent, indexPays, indice, indexCapitale, compteur;
+    int continent, indexPays, indice, indexCapitale, compteur, test;
     FILE *fichierDePays, *fichierTestPays;
 
     indice = 0;
@@ -160,7 +177,9 @@ void main(){
             indice++;
         }
     }
-    
+    /*for (test = 0; test < 50; test++) {
+        printf("%s %s\n", paysPourTableau[test], capitalePourTableau[test]);
+    }*/
     do{
         continent = menu();
         switch (continent) {
@@ -200,17 +219,17 @@ void main(){
                 indexPays = genererNombreAleatoire(40, 49);
                 strcpy(pays, paysPourTableau[indexPays]);
                 strcpy(capitaleADeviner, capitalePourTableau[indexPays]);
+                //gotoxy(30,24); printf("%s  %s %s  %s", paysPourTableau[indexPays], capitalePourTableau[indexPays], pays, capitaleADeviner);
                 for (compteur = 0; compteur < 50; compteur++) {
                     strcpy(capitales[compteur], capitalePourTableau[compteur]);
                 }
                 break;
+            case 6:
+                printf("Au revoir !\n");
+                fclose(fichierDePays);
+                return;
             default:
-                printf("Veuillez saisir une un chiffre de la liste.\n");
-        }
+                printf("Veuillez saisir un chiffre de la liste.\n");
+        } devinerCapital(pays, capitaleADeviner, capitales);
     } while (continent != 6);
-    devinerCapital(pays, capitaleADeviner, capitales);
-    printf("Hello World!\n");
-    //basePotence();
-    potence(1);
-    //printf("Hello World!\n");
 }

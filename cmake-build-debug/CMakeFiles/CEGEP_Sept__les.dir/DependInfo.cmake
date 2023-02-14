@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/gilj/Documents/GitHub/CEGEP_Sept--les/main.c" "CMakeFiles/CEGEP_Sept__les.dir/main.c.obj" "gcc" "CMakeFiles/CEGEP_Sept__les.dir/main.c.obj.d"
+  "C:/Users/Jean-Lou Gilbertas/Documents/GitHub/CEGEP_Sept--les/main.c" "CMakeFiles/CEGEP_Sept__les.dir/main.c.obj" "gcc" "CMakeFiles/CEGEP_Sept__les.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.

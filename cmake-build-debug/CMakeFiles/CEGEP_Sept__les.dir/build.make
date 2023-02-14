@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe
+CMAKE_COMMAND = "C:\Users\Jean-Lou Gilbertas\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe -E rm -f
+RM = "C:\Users\Jean-Lou Gilbertas\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les
+CMAKE_SOURCE_DIR = "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CEGEP_Sept__les.dir/depend.make
@@ -69,18 +69,18 @@ include CMakeFiles/CEGEP_Sept__les.dir/progress.make
 include CMakeFiles/CEGEP_Sept__les.dir/flags.make
 
 CMakeFiles/CEGEP_Sept__les.dir/main.c.obj: CMakeFiles/CEGEP_Sept__les.dir/flags.make
-CMakeFiles/CEGEP_Sept__les.dir/main.c.obj: C:/Users/gilj/Documents/GitHub/CEGEP_Sept--les/main.c
+CMakeFiles/CEGEP_Sept__les.dir/main.c.obj: C:/Users/Jean-Lou\ Gilbertas/Documents/GitHub/CEGEP_Sept--les/main.c
 CMakeFiles/CEGEP_Sept__les.dir/main.c.obj: CMakeFiles/CEGEP_Sept__les.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CEGEP_Sept__les.dir/main.c.obj"
-	C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CEGEP_Sept__les.dir/main.c.obj -MF CMakeFiles\CEGEP_Sept__les.dir\main.c.obj.d -o CMakeFiles\CEGEP_Sept__les.dir\main.c.obj -c C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CEGEP_Sept__les.dir/main.c.obj"
+	C:\Users\JEAN-L~1\AppData\Local\JETBRA~1\Toolbox\apps\CLion\ch-0\223861~1.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CEGEP_Sept__les.dir/main.c.obj -MF CMakeFiles\CEGEP_Sept__les.dir\main.c.obj.d -o CMakeFiles\CEGEP_Sept__les.dir\main.c.obj -c "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\main.c"
 
 CMakeFiles/CEGEP_Sept__les.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CEGEP_Sept__les.dir/main.c.i"
-	C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\main.c > CMakeFiles\CEGEP_Sept__les.dir\main.c.i
+	C:\Users\JEAN-L~1\AppData\Local\JETBRA~1\Toolbox\apps\CLion\ch-0\223861~1.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\main.c" > CMakeFiles\CEGEP_Sept__les.dir\main.c.i
 
 CMakeFiles/CEGEP_Sept__les.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CEGEP_Sept__les.dir/main.c.s"
-	C:\Users\gilj\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\main.c -o CMakeFiles\CEGEP_Sept__les.dir\main.c.s
+	C:\Users\JEAN-L~1\AppData\Local\JETBRA~1\Toolbox\apps\CLion\ch-0\223861~1.54\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\main.c" -o CMakeFiles\CEGEP_Sept__les.dir\main.c.s
 
 # Object files for target CEGEP_Sept__les
 CEGEP_Sept__les_OBJECTS = \
@@ -94,7 +94,7 @@ CEGEP_Sept__les.exe: CMakeFiles/CEGEP_Sept__les.dir/build.make
 CEGEP_Sept__les.exe: CMakeFiles/CEGEP_Sept__les.dir/linklibs.rsp
 CEGEP_Sept__les.exe: CMakeFiles/CEGEP_Sept__les.dir/objects1.rsp
 CEGEP_Sept__les.exe: CMakeFiles/CEGEP_Sept__les.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable CEGEP_Sept__les.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable CEGEP_Sept__les.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CEGEP_Sept__les.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +106,6 @@ CMakeFiles/CEGEP_Sept__les.dir/clean:
 .PHONY : CMakeFiles/CEGEP_Sept__les.dir/clean
 
 CMakeFiles/CEGEP_Sept__les.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug C:\Users\gilj\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles\CEGEP_Sept__les.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les" "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les" "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug" "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug" "C:\Users\Jean-Lou Gilbertas\Documents\GitHub\CEGEP_Sept--les\cmake-build-debug\CMakeFiles\CEGEP_Sept__les.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/CEGEP_Sept__les.dir/depend
 
