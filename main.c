@@ -6,10 +6,10 @@
 #include <locale.h>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
 #include <conio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <windows.h>
 
 void gotoxy(int colonne, int ligne);
 int menu();
@@ -27,7 +27,7 @@ void gotoxy(int colonne, int ligne){
 }
 
 int menu() {
-    int continent;
+    int continent = 0;
     do {
         gotoxy(33, 2); printf("JEU DU PENDU\n");
         gotoxy(32, 3); printf("MENU PRINCIPAL\n");
@@ -39,8 +39,7 @@ int menu() {
         gotoxy(14, 13); printf("6. Quitter\n");
         gotoxy(14, 15); printf("Veuillez choisir le continent : ");
         scanf("%d", &continent);
-    } while (continent != 1 && continent != 2 && continent != 3 &&
-             continent != 4 && continent != 5 && continent != 6);
+    } while (continent == 0);
     return continent;
 }
 
@@ -95,16 +94,24 @@ void potence(int etatPotence){
 void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50][100]){
     size_t compteur;
     size_t indice = 0;
-    int tableauAleatoire[9];
     int insertionAleatoire;
     int nombreEssai = 0;
     int choixUtilisateur = 0;
+    char entreeAppuyee;
     char listeCapitale[9][100];
     bool testEgaliteTableau = true;
     bool capitaleTrouvee = false;
 
 
-    strcpy(listeCapitale[0], capitale[genererNombreAleatoire(0, 49)]);
+    while (testEgaliteTableau){
+        testEgaliteTableau = false;
+        insertionAleatoire = genererNombreAleatoire(0, 49);
+        if (strcmp(capitaleADeviner, capitale[insertionAleatoire]) == 0) {
+            testEgaliteTableau = true;
+        }
+    }
+
+    strcpy(listeCapitale[0], capitale[insertionAleatoire]);
     for (compteur = 1; compteur < 10; compteur++) {
         testEgaliteTableau = true;
         while (testEgaliteTableau){
@@ -144,7 +151,7 @@ void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50
             gotoxy(20, 24); printf("La capitale de ce pays est bien %s\n", capitaleADeviner);
             capitaleTrouvee = true;
             gotoxy(20, 25); printf("Appuyez sur une touche pour continuer...\n");
-            scanf("%d", &choixUtilisateur);
+            getch();
             system("cls");
         } else {
             nombreEssai++;
@@ -154,13 +161,16 @@ void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50
             gotoxy(20, 23); printf("Vous avez perdu !\n");
             gotoxy(20, 24); printf("La capitale de ce pays est %s\n", capitaleADeviner);
             gotoxy(20, 25); printf("Appuyez sur une touche pour continuer...\n");
-            scanf("%d", &choixUtilisateur);
+            getch();
             system("cls");
         }
     }
 }
 
 void main(){
+    setlocale(LC_ALL, "");
+
+
     system("cls");
     char paysPourTableau[50][100], capitalePourTableau[50][100], pays[100], capitaleADeviner[100], capitales[50][100];
     int continent, indexPays, indice, indexCapitale, compteur, test;
@@ -233,6 +243,11 @@ void main(){
                 return;
             default:
                 printf("Veuillez saisir un chiffre de la liste.\n");
-        } devinerCapital(pays, capitaleADeviner, capitales);
+                break;
+        } if (continent < 6) {
+            devinerCapital(pays, capitaleADeviner, capitales);
+        } else{
+            gotoxy(14, 15); printf("Veuillez choisir le continent :  \n");
+        }
     } while (continent != 6);
 }
