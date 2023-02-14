@@ -93,8 +93,8 @@ void potence(int etatPotence){
 }
 
 void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50][100]){
-    int compteur;
-    int indice = 0;
+    size_t compteur;
+    size_t indice = 0;
     int tableauAleatoire[9];
     int insertionAleatoire;
     int nombreEssai = 0;
@@ -103,25 +103,25 @@ void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50
     bool testEgaliteTableau = true;
     bool capitaleTrouvee = false;
 
-    tableauAleatoire[0] = genererNombreAleatoire(0, 49);
-    strcpy(listeCapitale[0], capitale[tableauAleatoire[0]]);
-    for (compteur = 1; compteur < 9; compteur++) {
+
+    strcpy(listeCapitale[0], capitale[genererNombreAleatoire(0, 49)]);
+    for (compteur = 1; compteur < 10; compteur++) {
         testEgaliteTableau = true;
-        while (testEgaliteTableau == true){
+        while (testEgaliteTableau){
             testEgaliteTableau = false;
             insertionAleatoire = genererNombreAleatoire(0, 49);
             for (indice = 0; indice < compteur; indice++) {
-                if (tableauAleatoire[indice] == insertionAleatoire && strcmp(capitaleADeviner, capitale[insertionAleatoire]) != 0) {
+                if (strcmp(capitaleADeviner, capitale[insertionAleatoire]) == 0 || strcmp(listeCapitale[indice], capitale[insertionAleatoire]) == 0) {
                     testEgaliteTableau = true;
                     break;
                 }
             }
-
-        } tableauAleatoire[compteur] = insertionAleatoire;
+        }
         strcpy(listeCapitale[compteur], capitale[insertionAleatoire]);
     }
-    insertionAleatoire = genererNombreAleatoire(0, 9);
-    strcpy(listeCapitale[9], listeCapitale[insertionAleatoire]);
+
+    insertionAleatoire = genererNombreAleatoire(0, 8);
+    //strcpy(listeCapitale[9], listeCapitale[insertionAleatoire]);
     strcpy(listeCapitale[insertionAleatoire], capitaleADeviner);
 
 
@@ -133,13 +133,13 @@ void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50
         //printf("%s", capitaleADeviner);
         for (compteur = 0; compteur < 9; compteur++) {
             gotoxy(80, 16 + compteur); printf("%d", compteur + 1);
-            gotoxy(82, 16 + compteur); printf("%s", listeCapitale[compteur]);
+            gotoxy(82, 16 + compteur); printf("%s   %d", listeCapitale[compteur], compteur);
         }
         gotoxy(20, 21); printf("Quelle est la capitale du pays suivant ?%s : ", pays);
         gotoxy(20, 23); printf("Entrez votre choix : \n");
         gotoxy(41, 23); scanf("%d", &choixUtilisateur);
 
-        if (strcmp(listeCapitale[choixUtilisateur], capitaleADeviner)) {
+        if (strcmp(capitaleADeviner, listeCapitale[choixUtilisateur - 1]) == 0) {
             gotoxy(20, 23); printf("Bravo, vous avez gagnez !\n");
             gotoxy(20, 24); printf("La capitale de ce pays est bien %s\n", capitaleADeviner);
             capitaleTrouvee = true;
