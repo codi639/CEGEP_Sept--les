@@ -106,21 +106,18 @@ void devinerCapital(char pays[100], char capitaleADeviner[100], char capitale[50
     tableauAleatoire[0] = genererNombreAleatoire(0, 49);
     strcpy(listeCapitale[0], capitale[tableauAleatoire[0]]);
     for (compteur = 1; compteur < 9; compteur++) {
+        testEgaliteTableau = true;
         while (testEgaliteTableau == true){
+            testEgaliteTableau = false;
             insertionAleatoire = genererNombreAleatoire(0, 49);
-            printf("%d", insertionAleatoire);
             for (indice = 0; indice < compteur; indice++) {
-                if (tableauAleatoire[indice] == insertionAleatoire) {
+                if (tableauAleatoire[indice] == insertionAleatoire && strcmp(capitaleADeviner, capitale[insertionAleatoire]) != 0) {
                     testEgaliteTableau = true;
-                    break;
-                } else {
-                    testEgaliteTableau = false;
-                    tableauAleatoire[indice] = insertionAleatoire;
                     break;
                 }
             }
 
-        }
+        } tableauAleatoire[compteur] = insertionAleatoire;
         strcpy(listeCapitale[compteur], capitale[insertionAleatoire]);
     }
     insertionAleatoire = genererNombreAleatoire(0, 9);
