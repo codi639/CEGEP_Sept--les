@@ -144,11 +144,11 @@ void devinerCapitale(char pays[100], char capitaleADeviner[100], char capitale[5
 
         //Affichage des choix.
         for (compteur = 0; compteur < 9; compteur++) {
-            gotoxy(80, 16 + compteur); printf("%d", compteur + 1);
-            gotoxy(82, 16 + compteur); printf("%s", listeCapitale[compteur]);
+            gotoxy(80, 10 + compteur); printf("%d", compteur + 1);
+            gotoxy(82, 10 + compteur); printf("%s", listeCapitale[compteur]);
         }
         //Demande de saisie du choix de l'utilisateur.
-        gotoxy(20, 21); printf("Quelle est la capitale du pays suivant ?%s : ", pays);
+        gotoxy(20, 21); printf("Quelle est la capitale du pays suivant ? %s", pays);
         gotoxy(20, 23); printf("Entrez votre choix : \n");
         gotoxy(41, 23); scanf("%d", &choixUtilisateur);
 
