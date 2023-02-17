@@ -133,7 +133,7 @@ void devinerCapitale(char pays[100], char capitaleADeviner[100], char capitale[5
         strcpy(listeCapitale[compteur], capitale[insertionAleatoire]);
     }
     //Remplacement d'une capitale par la capitale à deviner.
-    insertionAleatoire = genererNombreAleatoire(0, 8);
+    insertionAleatoire = genererNombreAleatoire(0, 9);
     strcpy(listeCapitale[insertionAleatoire], capitaleADeviner);
 
     //Début du jeu.
